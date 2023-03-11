@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s3Tk0wtCk0mbkxgiyIj8Lbq5B+u5lqBAfdvDs1Evl698nqQ8ucZ+ZkDeA1DquuNTnbPQqtMiN50OGhTMVEtotw==",
+  "dgSpecHash": "Zxa4V01Kj0Taa5WEeu7C/0DE0995Q+r+gl3YMpXSq2dsIgKirsvQsnKoyCdK8uSmbTNbGllZxOP3AHJ2EfOE9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\OrderApplication\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
+  "projectFilePath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kubra\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

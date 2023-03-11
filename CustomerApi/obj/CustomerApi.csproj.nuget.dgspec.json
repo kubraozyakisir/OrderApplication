@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\OrderApplication\\OrderApplication\\CustomerApi\\CustomerApi.csproj": {}
+    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\CustomerApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\OrderApplication\\OrderApplication\\CustomerApi\\CustomerApi.csproj": {
+    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\CustomerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\OrderApplication\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
+        "projectUniqueName": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
         "projectName": "CustomerApi",
-        "projectPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\OrderApplication\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
+        "projectPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
         "packagesPath": "C:\\Users\\kubra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\OrderApplication\\OrderApplication\\CustomerApi\\obj\\",
+        "outputPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
