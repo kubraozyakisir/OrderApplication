@@ -1,11 +1,11 @@
-﻿using DataAnnotationsExtensions;
+﻿ 
 using System.ComponentModel.DataAnnotations;
 
 namespace OrderApi.Models.SubModel
 {
     public class RequestOrders : IValidatableObject
     {
-        [Min(0)]
+        [Range(0, int.MaxValue)]
         public int IdProduct { get; set; }
 
         [StringLength(50)]

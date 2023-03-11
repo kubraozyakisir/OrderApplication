@@ -1,4 +1,6 @@
-﻿using CustomerApi.Models;
+﻿using CustomerApi.Business.Interfaces;
+using CustomerApi.Models;
+using CustomerApi.Models.SubModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,45 +10,32 @@ namespace CustomerApi.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly CustomerDbContext _customerDbContext;
-        public CustomerController(CustomerDbContext customerDbContext)
-        {
-            _customerDbContext = customerDbContext;
-        }
-        [HttpGet]
-        public ActionResult<IEnumerable<Customers>> GetAll()
-        {
-            return _customerDbContext.Customers;
-        }
-        [HttpGet("{IdCustomer:int}")]
-        public  async Task<ActionResult<Customers>> GetCustomer(int IdCustomer)
-        {
-           var customer = await _customerDbContext.Customers.FindAsync(IdCustomer);
-            return customer;
-        }
-        [HttpPost]
-        public async Task<ActionResult<Customers>> Create(Customers customer)
-        {
-            await _customerDbContext.Customers.AddAsync(customer);
-            await _customerDbContext.SaveChangesAsync();
-                return Ok();
-             
-        }
-        [HttpPut]
-        public async Task<ActionResult<Customers>> Update(Customers customer)
-        {
-             _customerDbContext.Customers.Update(customer);
-            await _customerDbContext.SaveChangesAsync();
-                return Ok();
+        private readonly ICustomerBusiness _business;
 
-        }
-        [HttpDelete("{IdCustomer:int}")]
-        public async Task<ActionResult<Customers>> Delete(int IdCustomer)
+        public CustomerController(ICustomerBusiness business)
         {
-            var customer = await _customerDbContext.Customers.FindAsync(IdCustomer);
-            _customerDbContext.Customers.Remove(customer);
-            await _customerDbContext.SaveChangesAsync();
-            return Ok();
+            _business = business;
         }
+
+        [HttpGet]
+        [Route("[action]/{IdOrder}")]
+        public ResponseCustomers_Get Get(int IdOrder) => _business.Get(IdOrder);
+
+        [HttpGet]
+        [Route("[action]")]
+        public List<ResponseCustomers_GetAll> GetAll() => _business.GetAll();
+
+        [HttpPost]
+        [Route("[action]")]
+        public void Create(RequestCustomers request) => _business.Create(request);
+
+        [HttpPost]
+        [Route("[action]")]
+        public void Update(RequestCustomers request) => _business.Update(request);
+
+        [HttpPost]
+        [Route("[action]/{IdCustomer}")]
+        public void Delete(int IdCustomer) => _business.Delete(IdCustomer);
+
     }
 }

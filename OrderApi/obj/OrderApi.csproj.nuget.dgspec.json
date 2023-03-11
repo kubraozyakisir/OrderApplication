@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\OrderApi\\OrderApi.csproj": {}
+    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone2\\OrderApplication\\OrderApi\\OrderApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\OrderApi\\OrderApi.csproj": {
+    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone2\\OrderApplication\\OrderApi\\OrderApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\OrderApi\\OrderApi.csproj",
+        "projectUniqueName": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone2\\OrderApplication\\OrderApi\\OrderApi.csproj",
         "projectName": "OrderApi",
-        "projectPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\OrderApi\\OrderApi.csproj",
+        "projectPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone2\\OrderApplication\\OrderApi\\OrderApi.csproj",
         "packagesPath": "C:\\Users\\kubra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\OrderApi\\obj\\",
+        "outputPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone2\\OrderApplication\\OrderApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -52,9 +52,9 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
-            "DataAnnotationsExtensions": {
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
               "target": "Package",
-              "version": "[5.0.1.27, )"
+              "version": "[2.2.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -79,6 +79,10 @@
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [

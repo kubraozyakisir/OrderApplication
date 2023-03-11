@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "Zxa4V01Kj0Taa5WEeu7C/0DE0995Q+r+gl3YMpXSq2dsIgKirsvQsnKoyCdK8uSmbTNbGllZxOP3AHJ2EfOE9w==",
+  "dgSpecHash": "w003h8dy05GZGAKKR90xf66NLD+nmdWCsyDP4DrqPeTXOf4DYQXb+2InmiRwGruMcTbBjUfxPQqB4/D5ZQ/Ubg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
+  "projectFilePath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\clone2\\OrderApplication\\CustomerApi\\CustomerApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kubra\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\kubra\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\kubra\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\kubra\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",

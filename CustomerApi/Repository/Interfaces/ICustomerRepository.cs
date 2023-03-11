@@ -1,12 +1,10 @@
-﻿using CustomerApi.Models;
+﻿using CustomerApi.Models.SubModel;
 
 namespace CustomerApi.Repository.Interfaces
 {
     public interface ICustomerRepository
     {
-        List<Customers> Add(Customers customer);
-        List<Customers> GetAll();
-        Customers GetCustomer(int id);
-        Customers Update(Customers customer);
+        ResponseCustomers_Get Get(int IdCustomer);
+        List<ResponseCustomers_GetAll> GetAll();
     }
 }

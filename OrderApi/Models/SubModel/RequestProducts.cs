@@ -1,26 +1,27 @@
-﻿using DataAnnotationsExtensions;
+﻿//using Microsoft.AspNetCore.Mvc.DataAnnotations;  min(0) için gerekli olan bu kütüphane, .net core 6 ile uyumlu değil
 using System.ComponentModel.DataAnnotations;
 
 namespace OrderApi.Models.SubModel
 {
     public class RequestProducts : IValidatableObject
     {
-        [Min(0)]
+    
+        [Range(0, int.MaxValue)]
         public int IdOrder { get; set; }
 
-        [Min(0)]
+        [Range(0, int.MaxValue)]
         public int IdCustomer { get; set; }
 
-        [Min(0)]
+        [Range(0, int.MaxValue)]
         public int Quantity { get; set; }
-        [Min(0)]
+        [Range(0, int.MaxValue)]
         public decimal Price { get; set; }
         [StringLength(50)]
         public string OrderStatus { get; set; }
-        [Min(0)]
+        [Range(0, int.MaxValue)]
         public int IdAddress { get; set; }
         // Foreign key property
-        [Min(0)]
+        [Range(0, int.MaxValue)]
         public int IdProduct { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

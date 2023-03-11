@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CustomerApi.Repository
 {
-    public class CustomerRepository : ICustomerRepository
+    public class AddressRepository : IAddressRepository
     {
-
         private readonly CustomerDbContext _db;
-        public CustomerRepository(CustomerDbContext db)
+        public AddressRepository(CustomerDbContext db)
         {
             _db = db;
         }
-        public List<ResponseCustomers_GetAll> GetAll()
+        public List<ResponseAddresses_GetAll> GetAll()
         {
             var sql = @"
              SELECT 
@@ -27,10 +26,10 @@ namespace CustomerApi.Repository
                   CreatedDate, 
                   UpdatedDate 
                 FROM  Orders ";
-            var result = _db.Set<ResponseCustomers_GetAll>().FromSqlRaw(sql).ToList();
+            var result = _db.Set<ResponseAddresses_GetAll>().FromSqlRaw(sql).ToList();
             return result;
         }
-        public ResponseCustomers_Get Get(int IdCustomer)
+        public ResponseAddresses_Get Get(int IdAddress)
         {
             var sql = @"
              SELECT 
@@ -44,9 +43,8 @@ namespace CustomerApi.Repository
                   CreatedDate, 
                   UpdatedDate 
                 FROM  Orders where IdAddress= @prmIdAddress";
-            var result = _db.Set<ResponseCustomers_Get>().FromSqlRaw(sql, new { prmIdCustomer = IdCustomer }).FirstOrDefault();
+            var result = _db.Set<ResponseAddresses_Get>().FromSqlRaw(sql, new { prmIdAddress = IdAddress }).FirstOrDefault();
             return result;
         }
-
     }
 }
