@@ -22,8 +22,11 @@ namespace OrderApi.Models
        
         public Product Product { get; set; }
 
+        //CreatedDate has getdate() method
         [Column(TypeName = "datetime")]
         public DateTime CreatedDate { get; set; }
+
+        //updated has a trigger
         [Column(TypeName = "datetime")]
         public DateTime? UpdatedDate { get; set; }
     }

@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OrderApi.Models;
 using OrderApi.Models.SubModel;
+using OrderApi.Repository.Interfaces;
 
 namespace OrderApi.Repository
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
         private readonly OrderDbContext _db;
 
@@ -14,7 +15,7 @@ namespace OrderApi.Repository
         }
         public List<ResponseOrder_GetAll> GetAll()
         {
-           var sql = @"
+            var sql = @"
              SELECT 
                   IdOrder, 
                   IdCustomer, 
@@ -43,10 +44,8 @@ namespace OrderApi.Repository
                   CreatedDate, 
                   UpdatedDate 
                 FROM  Order where IdOrder= @prmIdOrder";
-            var result = _db.Set<ResponseOrder_Get>().FromSqlRaw(sql, new {prmIdOrder = IdOrder}).FirstOrDefault();
+            var result = _db.Set<ResponseOrder_Get>().FromSqlRaw(sql, new { prmIdOrder = IdOrder }).FirstOrDefault();
             return result;
         }
-
-
     }
 }

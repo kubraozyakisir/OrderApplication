@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OrderApi.Models;
 using System.Net;
 
-namespace OrderApi.Models
+namespace OrderApi.Repository
 {
-    public class OrderDbContext:DbContext
+    public class OrderDbContext : DbContext
     {
-        public  OrderDbContext()
+        public OrderDbContext()
         {
         }
         public OrderDbContext(DbContextOptions options) : base(options)
