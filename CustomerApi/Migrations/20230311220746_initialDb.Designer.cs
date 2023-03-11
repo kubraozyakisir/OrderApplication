@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CustomerApi.Migrations
 {
     [DbContext(typeof(CustomerDbContext))]
-    [Migration("20230310222809_initialDb")]
+    [Migration("20230311220746_initialDb")]
     partial class initialDb
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace CustomerApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CustomerApi.Models.Address", b =>
+            modelBuilder.Entity("CustomerApi.Models.Addresses", b =>
                 {
                     b.Property<int>("IdAddress")
                         .ValueGeneratedOnAdd()
@@ -55,10 +55,10 @@ namespace CustomerApi.Migrations
 
                     b.HasKey("IdAddress");
 
-                    b.ToTable("Address");
+                    b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("CustomerApi.Models.Customer", b =>
+            modelBuilder.Entity("CustomerApi.Models.Customers", b =>
                 {
                     b.Property<int>("IdCustomer")
                         .ValueGeneratedOnAdd()
@@ -92,12 +92,12 @@ namespace CustomerApi.Migrations
 
                     b.HasIndex("AddressIdAddress");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("CustomerApi.Models.Customer", b =>
+            modelBuilder.Entity("CustomerApi.Models.Customers", b =>
                 {
-                    b.HasOne("CustomerApi.Models.Address", "Address")
+                    b.HasOne("CustomerApi.Models.Addresses", "Address")
                         .WithMany("Customer")
                         .HasForeignKey("AddressIdAddress")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -106,7 +106,7 @@ namespace CustomerApi.Migrations
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("CustomerApi.Models.Address", b =>
+            modelBuilder.Entity("CustomerApi.Models.Addresses", b =>
                 {
                     b.Navigation("Customer");
                 });

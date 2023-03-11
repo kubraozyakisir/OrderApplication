@@ -12,8 +12,8 @@ namespace CustomerApi.Models
         {
 
         }
-        public DbSet<Customer> Customer { get; set; }
-        public DbSet<Address> Address { get; set; }
+        public DbSet<Customers> Customers { get; set; }
+        public DbSet<Addresses> Addresses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

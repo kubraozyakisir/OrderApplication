@@ -47,8 +47,8 @@ namespace OrderApi.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductIdProduct")
                         .HasColumnType("int");
@@ -66,7 +66,7 @@ namespace OrderApi.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("OrderApi.Models.Product", b =>
+            modelBuilder.Entity("OrderApi.Models.Products", b =>
                 {
                     b.Property<int>("IdProduct")
                         .ValueGeneratedOnAdd()
@@ -86,12 +86,12 @@ namespace OrderApi.Migrations
 
                     b.HasKey("IdProduct");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("OrderApi.Models.Orders", b =>
                 {
-                    b.HasOne("OrderApi.Models.Product", "Product")
+                    b.HasOne("OrderApi.Models.Products", "Product")
                         .WithMany("Order")
                         .HasForeignKey("ProductIdProduct")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -100,7 +100,7 @@ namespace OrderApi.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("OrderApi.Models.Product", b =>
+            modelBuilder.Entity("OrderApi.Models.Products", b =>
                 {
                     b.Navigation("Order");
                 });

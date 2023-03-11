@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CustomerApi.Models
 {
-    public class Customer
+    public class Customers
     {
         [Key]
         public int IdCustomer { get; set; }
@@ -14,7 +14,7 @@ namespace CustomerApi.Models
         public string Email { get; set; }
         // Foreign key property
         public int IdAddress { get; set; }
-        public Address Address { get; set; }
+        public Addresses Address { get; set; }
 
         [Column(TypeName = "datetime")]
         public DateTime CreatedDate { get; set; }

@@ -2,7 +2,7 @@
 
 namespace OrderApi.Models
 {
-    public class Product
+    public class Products
     {
         [Key]
         public int IdProduct { get; set; }

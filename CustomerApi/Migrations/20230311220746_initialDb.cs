@@ -12,7 +12,7 @@ namespace CustomerApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Address",
+                name: "Addresses",
                 columns: table => new
                 {
                     IdAddress = table.Column<int>(type: "int", nullable: false)
@@ -24,11 +24,11 @@ namespace CustomerApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Address", x => x.IdAddress);
+                    table.PrimaryKey("PK_Addresses", x => x.IdAddress);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Customer",
+                name: "Customers",
                 columns: table => new
                 {
                     IdCustomer = table.Column<int>(type: "int", nullable: false)
@@ -42,18 +42,18 @@ namespace CustomerApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customer", x => x.IdCustomer);
+                    table.PrimaryKey("PK_Customers", x => x.IdCustomer);
                     table.ForeignKey(
-                        name: "FK_Customer_Address_AddressIdAddress",
+                        name: "FK_Customers_Addresses_AddressIdAddress",
                         column: x => x.AddressIdAddress,
-                        principalTable: "Address",
+                        principalTable: "Addresses",
                         principalColumn: "IdAddress",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Customer_AddressIdAddress",
-                table: "Customer",
+                name: "IX_Customers_AddressIdAddress",
+                table: "Customers",
                 column: "AddressIdAddress");
         }
 
@@ -61,10 +61,10 @@ namespace CustomerApi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "Address");
+                name: "Addresses");
         }
     }
 }

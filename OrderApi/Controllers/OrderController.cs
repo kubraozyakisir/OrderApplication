@@ -27,11 +27,11 @@ namespace OrderApi.Controllers
 
         [HttpPost]
         [Route("[action]")]
-        public void Create(RequestOrder request) => _business.Create(request);
+        public void Create(RequestOrders request) => _business.Create(request);
 
         [HttpPost]
         [Route("[action]")]
-        public void Update(RequestOrder request) => _business.Update(request);
+        public void Update(RequestOrders request) => _business.Update(request);
 
         [HttpPost]
         [Route("[action]/{IdOrder}")]

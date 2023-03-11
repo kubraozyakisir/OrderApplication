@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace OrderApi.Models
+﻿namespace OrderApi.Models
 {
     public class DataSeeder
     {
@@ -45,24 +43,24 @@ namespace OrderApi.Models
                 _orderDbContext.Orders.AddRange(orders);
                 _orderDbContext.SaveChanges();
             }
-            if (!_orderDbContext.Product.Any())
+            if (!_orderDbContext.Products.Any())
             {
-                var products = new List<Product>()
+                var products = new List<Products>()
                 {
-                    new Product()
+                    new Products()
                     {
                         IdProduct=1,
                         ImageUrl="www.xxx.com/1.png",
                         ProductName="Kitap"
                     },
-                      new Product()
+                      new Products()
                      {
                         IdProduct=2,
                         ImageUrl="www.xxx.com/2.png",
                         ProductName="Çanta"
                     },
                 };
-                _orderDbContext.Product.AddRange(products);
+                _orderDbContext.Products.AddRange(products);
                 _orderDbContext.SaveChanges();
             }
         }

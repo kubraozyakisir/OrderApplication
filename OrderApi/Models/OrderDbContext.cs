@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Net;
 
 namespace OrderApi.Models
 {
@@ -12,7 +11,7 @@ namespace OrderApi.Models
         {
         }
         public DbSet<Orders> Orders { get; set; }
-        public DbSet<Product> Product { get; set; }
+        public DbSet<Products> Products { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

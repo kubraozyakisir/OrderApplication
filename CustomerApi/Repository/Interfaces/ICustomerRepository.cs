@@ -4,9 +4,9 @@ namespace CustomerApi.Repository.Interfaces
 {
     public interface ICustomerRepository
     {
-        List<Customer> Add(Customer customer);
-        List<Customer> GetAll();
-        Customer GetCustomer(int id);
-        Customer Update(Customer customer);
+        List<Customers> Add(Customers customer);
+        List<Customers> GetAll();
+        Customers GetCustomer(int id);
+        Customers Update(Customers customer);
     }
 }

@@ -12,22 +12,22 @@ namespace CustomerApi.Repository
         {
             this.db = db;
         }
-        public List<Customer> GetAll() => db.Customer.ToList();
-        public Customer Update(Customer customer)
+        public List<Customers> GetAll() => db.Customers.ToList();
+        public Customers Update(Customers customer)
         {
-            db.Customer.Update(customer);
+            db.Customers.Update(customer);
             db.SaveChanges();
-            return db.Customer.Where(x => x.IdCustomer == customer.IdCustomer).FirstOrDefault();
+            return db.Customers.Where(x => x.IdCustomer == customer.IdCustomer).FirstOrDefault();
         }
-        public List<Customer> Add(Customer customer)
+        public List<Customers> Add(Customers customer)
         {
-            db.Customer.Add(customer);
+            db.Customers.Add(customer);
             db.SaveChanges();
-            return db.Customer.ToList();
+            return db.Customers.ToList();
         }
-        public Customer GetCustomer(int id)
+        public Customers GetCustomer(int id)
         {
-            return db.Customer.Where(x => x.IdCustomer == id).FirstOrDefault();
+            return db.Customers.Where(x => x.IdCustomer == id).FirstOrDefault();
         }
 
     }

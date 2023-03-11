@@ -11,11 +11,11 @@
        
         public void Seed()
         {
-            if (!customerDbContext.Customer.Any())
+            if (!customerDbContext.Customers.Any())
             {
-                var customers = new List<Customer>()
+                var customers = new List<Customers>()
                 {
-                    new Customer()
+                    new Customers()
                     {
                         IdCustomer = 1,
                         CustomerName="Sezen Altan",
@@ -24,7 +24,7 @@
                         CreatedDate=DateTime.Now,
                         UpdatedDate=null
                     },
-                      new Customer()
+                      new Customers()
                      {
                         IdCustomer = 2,
                         CustomerName="Ali Sayar",
@@ -35,14 +35,14 @@
                     },
 
                 };
-                customerDbContext.Customer.AddRange(customers);
+                customerDbContext.Customers.AddRange(customers);
                 customerDbContext.SaveChanges();
             }
-            if (!customerDbContext.Address.Any())
+            if (!customerDbContext.Addresses.Any())
             {
-                var address = new List<Address>()
+                var address = new List<Addresses>()
                 {
-                    new Address()
+                    new Addresses()
                     {
                         IdAddress=1,
                         AddressLine="Bebek",
@@ -51,7 +51,7 @@
                         Code="34360"
                        
                     },
-                      new Address()
+                      new Addresses()
                      {
                         IdAddress=2,
                         AddressLine="Erenköy",
@@ -62,7 +62,7 @@
                     },
 
                 };
-                customerDbContext.Address.AddRange(address);
+                customerDbContext.Addresses.AddRange(address);
                 customerDbContext.SaveChanges();
             }
 

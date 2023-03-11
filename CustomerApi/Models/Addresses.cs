@@ -2,7 +2,7 @@
 
 namespace CustomerApi.Models
 {
-    public class Address
+    public class Addresses
     {
         [Key]
         public int IdAddress { get; set; }
@@ -15,6 +15,6 @@ namespace CustomerApi.Models
         [MaxLength(20)]
         public string Code { get; set; }
         // Navigation property
-        public ICollection<Customer> Customer { get; set; }
+        public ICollection<Customers> Customer { get; set; }
     }
 }

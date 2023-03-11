@@ -26,17 +26,18 @@ namespace OrderApi.Business
         {
             return _repository.GetAll();
         }
-        public void Create(RequestOrder request)
+        public void Create(RequestOrders request)
         {
             var result = _mapper.Map<Orders>(request);
+            result.CreatedDate= DateTime.Now;
             _db.Add(result);
 
         }
-        public void Update(RequestOrder request)
+        public void Update(RequestOrders request)
         {
             var result = _mapper.Map<Orders>(request);
+            result.UpdatedDate = DateTime.Now;
             _db.Update(result);
-
         }
         public void Delete(int IdOrder)
         {

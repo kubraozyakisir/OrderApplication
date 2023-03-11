@@ -14,37 +14,37 @@ namespace CustomerApi.Controllers
             _customerDbContext = customerDbContext;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<Customer>> GetAll()
+        public ActionResult<IEnumerable<Customers>> GetAll()
         {
-            return _customerDbContext.Customer;
+            return _customerDbContext.Customers;
         }
         [HttpGet("{IdCustomer:int}")]
-        public  async Task<ActionResult<Customer>> GetCustomer(int IdCustomer)
+        public  async Task<ActionResult<Customers>> GetCustomer(int IdCustomer)
         {
-           var customer = await _customerDbContext.Customer.FindAsync(IdCustomer);
+           var customer = await _customerDbContext.Customers.FindAsync(IdCustomer);
             return customer;
         }
         [HttpPost]
-        public async Task<ActionResult<Customer>> Create(Customer customer)
+        public async Task<ActionResult<Customers>> Create(Customers customer)
         {
-            await _customerDbContext.Customer.AddAsync(customer);
+            await _customerDbContext.Customers.AddAsync(customer);
             await _customerDbContext.SaveChangesAsync();
                 return Ok();
              
         }
         [HttpPut]
-        public async Task<ActionResult<Customer>> Update(Customer customer)
+        public async Task<ActionResult<Customers>> Update(Customers customer)
         {
-             _customerDbContext.Customer.Update(customer);
+             _customerDbContext.Customers.Update(customer);
             await _customerDbContext.SaveChangesAsync();
                 return Ok();
 
         }
         [HttpDelete("{IdCustomer:int}")]
-        public async Task<ActionResult<Customer>> Delete(int IdCustomer)
+        public async Task<ActionResult<Customers>> Delete(int IdCustomer)
         {
-            var customer = await _customerDbContext.Customer.FindAsync(IdCustomer);
-            _customerDbContext.Customer.Remove(customer);
+            var customer = await _customerDbContext.Customers.FindAsync(IdCustomer);
+            _customerDbContext.Customers.Remove(customer);
             await _customerDbContext.SaveChangesAsync();
             return Ok();
         }

@@ -12,7 +12,7 @@ namespace OrderApi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "Products",
                 columns: table => new
                 {
                     IdProduct = table.Column<int>(type: "int", nullable: false)
@@ -22,7 +22,7 @@ namespace OrderApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.IdProduct);
+                    table.PrimaryKey("PK_Products", x => x.IdProduct);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,7 +33,7 @@ namespace OrderApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdCustomer = table.Column<int>(type: "int", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderStatus = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     IdAddress = table.Column<int>(type: "int", nullable: false),
                     IdProduct = table.Column<int>(type: "int", nullable: false),
@@ -45,9 +45,9 @@ namespace OrderApi.Migrations
                 {
                     table.PrimaryKey("PK_Orders", x => x.IdOrder);
                     table.ForeignKey(
-                        name: "FK_Orders_Product_ProductIdProduct",
+                        name: "FK_Orders_Products_ProductIdProduct",
                         column: x => x.ProductIdProduct,
-                        principalTable: "Product",
+                        principalTable: "Products",
                         principalColumn: "IdProduct",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -65,7 +65,7 @@ namespace OrderApi.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "Products");
         }
     }
 }

@@ -13,14 +13,14 @@ namespace OrderApi.Models
 
         public int Quantity { get; set; }
 
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         [MaxLength(50)]
         public string OrderStatus { get; set; }
         public int IdAddress { get; set; }
         // Foreign key property
         public int IdProduct { get; set; }
        
-        public Product Product { get; set; }
+        public Products Product { get; set; }
 
         //CreatedDate has getdate() method
         [Column(TypeName = "datetime")]

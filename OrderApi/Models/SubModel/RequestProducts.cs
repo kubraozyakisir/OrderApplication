@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OrderApi.Models.SubModel
 {
-    public class RequestOrder : IValidatableObject
+    public class RequestProducts : IValidatableObject
     {
         [Min(0)]
         public int IdOrder { get; set; }
@@ -14,7 +14,7 @@ namespace OrderApi.Models.SubModel
         [Min(0)]
         public int Quantity { get; set; }
         [Min(0)]
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         [StringLength(50)]
         public string OrderStatus { get; set; }
         [Min(0)]
