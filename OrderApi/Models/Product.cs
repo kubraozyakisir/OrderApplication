@@ -11,6 +11,6 @@ namespace OrderApi.Models
         public string ImageUrl { get; set; }
         [MaxLength(50)]
         public string ProductName { get; set; }
-        public ICollection<Order> Order { get; set; }
+        public ICollection<Orders> Order { get; set; }
     }
 }

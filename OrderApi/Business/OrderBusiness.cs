@@ -2,7 +2,6 @@
 using OrderApi.Business.Interfaces;
 using OrderApi.Models;
 using OrderApi.Models.SubModel;
-using OrderApi.Repository;
 using OrderApi.Repository.Interfaces;
 
 namespace OrderApi.Business
@@ -29,19 +28,19 @@ namespace OrderApi.Business
         }
         public void Create(RequestOrder request)
         {
-            var result = _mapper.Map<Order>(request);
+            var result = _mapper.Map<Orders>(request);
             _db.Add(result);
 
         }
         public void Update(RequestOrder request)
         {
-            var result = _mapper.Map<Order>(request);
+            var result = _mapper.Map<Orders>(request);
             _db.Update(result);
 
         }
         public void Delete(int IdOrder)
         {
-            var result = _mapper.Map<Order>(IdOrder);
+            var result = _mapper.Map<Orders>(IdOrder);
             _db.Remove(result);
 
         }

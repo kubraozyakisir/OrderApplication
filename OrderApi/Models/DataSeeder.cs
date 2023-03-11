@@ -1,23 +1,22 @@
 ﻿using System.Net;
-using OrderApi.Repository;
 
 namespace OrderApi.Models
 {
     public class DataSeeder
     {
-        private readonly OrderDbContext orderDbContext;
-        public DataSeeder(OrderDbContext customerDbContext)
+        private readonly OrderDbContext _orderDbContext;
+        public DataSeeder(OrderDbContext orderDbContext)
         {
-            this.orderDbContext = customerDbContext;
+            _orderDbContext = orderDbContext;
         }
 
         public void Seed()
         {
-            if (!orderDbContext.Order.Any())
+            if (!_orderDbContext.Orders.Any())
             {
-                var orders = new List<Order>()
+                var orders = new List<Orders>()
                 {
-                    new Order()
+                    new Orders()
                     {                               
                         IdOrder = 1,
                         IdCustomer=1,
@@ -29,7 +28,7 @@ namespace OrderApi.Models
                         CreatedDate=DateTime.Now,
                         UpdatedDate=null
                     },
-                      new Order()
+                      new Orders()
                      {
                         IdOrder = 2,
                         IdCustomer=2,
@@ -43,10 +42,10 @@ namespace OrderApi.Models
                     },
 
                 };
-                orderDbContext.Order.AddRange(orders);
-                orderDbContext.SaveChanges();
+                _orderDbContext.Orders.AddRange(orders);
+                _orderDbContext.SaveChanges();
             }
-            if (!orderDbContext.Product.Any())
+            if (!_orderDbContext.Product.Any())
             {
                 var products = new List<Product>()
                 {
@@ -63,8 +62,8 @@ namespace OrderApi.Models
                         ProductName="Çanta"
                     },
                 };
-                orderDbContext.Product.AddRange(products);
-                orderDbContext.SaveChanges();
+                _orderDbContext.Product.AddRange(products);
+                _orderDbContext.SaveChanges();
             }
         }
     }

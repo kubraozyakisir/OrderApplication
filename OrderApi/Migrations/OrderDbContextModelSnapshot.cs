@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using OrderApi.Repository;
+using OrderApi.Models;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace OrderApi.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("OrderApi.Models.Order", b =>
+            modelBuilder.Entity("OrderApi.Models.Orders", b =>
                 {
                     b.Property<int>("IdOrder")
                         .ValueGeneratedOnAdd()
@@ -63,7 +63,7 @@ namespace OrderApi.Migrations
 
                     b.HasIndex("ProductIdProduct");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("OrderApi.Models.Product", b =>
@@ -89,7 +89,7 @@ namespace OrderApi.Migrations
                     b.ToTable("Product");
                 });
 
-            modelBuilder.Entity("OrderApi.Models.Order", b =>
+            modelBuilder.Entity("OrderApi.Models.Orders", b =>
                 {
                     b.HasOne("OrderApi.Models.Product", "Product")
                         .WithMany("Order")

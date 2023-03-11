@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OrderApi.Models
 {
-    public class Order
+    public class Orders
     {
         [Key]
         public int IdOrder { get; set; }

@@ -26,7 +26,7 @@ namespace OrderApi.Repository
                   IdProduct, 
                   CreatedDate, 
                   UpdatedDate 
-                FROM  Order ";
+                FROM  Orders ";
             var result = _db.Set<ResponseOrder_GetAll>().FromSqlRaw(sql).ToList();
             return result;
         }
@@ -43,7 +43,7 @@ namespace OrderApi.Repository
                   IdProduct, 
                   CreatedDate, 
                   UpdatedDate 
-                FROM  Order where IdOrder= @prmIdOrder";
+                FROM  Orders where IdOrder= @prmIdOrder";
             var result = _db.Set<ResponseOrder_Get>().FromSqlRaw(sql, new { prmIdOrder = IdOrder }).FirstOrDefault();
             return result;
         }
