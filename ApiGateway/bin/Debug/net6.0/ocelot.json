@@ -2,59 +2,59 @@
   "Routes": [
     //Customer Web API
     {
-      "UpstreamPathTemplate": "/api/Customer/",
+      "UpstreamPathTemplate": "/customerapi/{*catch-all}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
       //ortak
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 80
+          "Port": 5000
         }
       ],
-      "DownstreamPathTemplate": "/api/Customer"
+      "DownstreamPathTemplate": "/customerapi/{*catch-all}"
     },
     //id gerektiren
     {
-      "UpstreamPathTemplate": "/api/Customer/{IdCustomer}",
+      "UpstreamPathTemplate": "/customerapi/{*catch-all}/{IdCustomer}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       //ortak
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 80
+          "Port": 5000
         }
       ],
-      "DownstreamPathTemplate": "/api/Customer/{IdCustomer}"
+      "DownstreamPathTemplate": "/customerapi/{*catch-all}/{IdCustomer}"
     },
     //Order Web API
     {
-      "UpstreamPathTemplate": "/api/Order/",
+      "UpstreamPathTemplate": "/orderapi/{*catch-all}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "orderwebapi",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 9000
         }
       ],
-      "DownstreamPathTemplate": "/api/Order"
+      "DownstreamPathTemplate": "/orderapi/{*catch-all}"
     },
     {
-      "UpstreamPathTemplate": "/api/Order/{IdOrder}",
+      "UpstreamPathTemplate": "/orderapi/{*catch-all}/{IdOrder}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "orderwebapi",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 9000
         }
       ],
-      "DownstreamPathTemplate": "/api/Order/{IdOrder}"
+      "DownstreamPathTemplate": "/orderapi/{*catch-all}/{IdOrder}"
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:800"
+    "BaseUrl": "http://localhost:5064"
   }
 }

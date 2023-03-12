@@ -6,7 +6,7 @@ using OrderApi.Models.SubModel;
 
 namespace OrderApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("orderapi/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {

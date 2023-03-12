@@ -6,7 +6,7 @@ using System.Net;
 
 namespace CustomerApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("customerapi/[controller]")]
     [ApiController]
     public class AddressController : ControllerBase
     {
