@@ -29,7 +29,6 @@ namespace OrderApi.Business
         public void Create(RequestOrders request)
         {
             var result = _mapper.Map<Orders>(request);
-            result.CreatedDate= DateTime.Now;
             _db.Add(result);
 
         }

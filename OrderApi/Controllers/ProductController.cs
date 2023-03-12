@@ -28,11 +28,11 @@ namespace OrderApi.Controllers
         [Route("[action]")]
         public void Create(RequestProducts request) => _business.Create(request);
 
-        [HttpPost]
+        [HttpPut]
         [Route("[action]")]
         public void Update(RequestProducts request) => _business.Update(request);
 
-        [HttpPost]
+        [HttpDelete]
         [Route("[action]/{IdProduct}")]
         public void Delete(int IdProduct) => _business.Delete(IdProduct);
     }

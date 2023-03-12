@@ -9,7 +9,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 80
+          "Port": 5238
         }
       ],
       "DownstreamPathTemplate": "/api/Customer"
@@ -23,7 +23,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 80
+          "Port": 5238
         }
       ],
       "DownstreamPathTemplate": "/api/Customer/{IdCustomer}"
@@ -36,7 +36,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "orderwebapi",
-          "Port": 80
+          "Port": 5181
         }
       ],
       "DownstreamPathTemplate": "/api/Order"
@@ -48,13 +48,13 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "orderwebapi",
-          "Port": 80
+          "Port": 5181
         }
       ],
       "DownstreamPathTemplate": "/api/Order/{IdOrder}"
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:800"
+    "BaseUrl": "http://localhost:5064"
   }
 }
