@@ -165,3 +165,8 @@ C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\obj\Debug\ne
 C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\obj\Debug\net6.0\OrderApi.pdb
 C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\obj\Debug\net6.0\OrderApi.genruntimeconfig.cache
 C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\obj\Debug\net6.0\ref\OrderApi.dll
+C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\obj\Debug\net6.0\OrderApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kubra\OneDrive\Masaüstü\clone2\OrderApplication\OrderApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

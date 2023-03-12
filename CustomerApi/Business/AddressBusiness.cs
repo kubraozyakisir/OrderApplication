@@ -28,8 +28,11 @@ namespace CustomerApi.Business
         public void Create(RequestAddresses request)
         {
             var result = _mapper.Map<Addresses>(request);
-            _db.Add(result);
-
+            if(result.IdAddress==0)
+            {
+                result.IdAddress = 0;
+                _db.Add(result);
+            }
         }
         public void Update(RequestAddresses request)
         {

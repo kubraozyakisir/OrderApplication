@@ -6,7 +6,6 @@ namespace CustomerApi.Models
 {
     public class Customers
     {
-        [Key]
         public int IdCustomer { get; set; }
         [MaxLength(50)]
         public string CustomerName { get; set; }

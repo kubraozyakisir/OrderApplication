@@ -20,6 +20,7 @@ namespace CustomerApi.Models.SubModel
     }
     public class ResponseAddresses_GetAll
     {
+    
         public int IdAddress { get; set; }
 
         public string AddressLine { get; set; }

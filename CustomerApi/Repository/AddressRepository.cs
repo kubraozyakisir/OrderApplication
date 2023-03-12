@@ -1,6 +1,7 @@
 ﻿using CustomerApi.Models;
 using CustomerApi.Models.SubModel;
 using CustomerApi.Repository.Interfaces;
+using Dapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomerApi.Repository
@@ -14,36 +15,30 @@ namespace CustomerApi.Repository
         }
         public List<ResponseAddresses_GetAll> GetAll()
         {
-            var sql = @"
-             SELECT 
-                  IdOrder, 
-                  IdCustomer, 
-                  Quantity, 
-                  Price, 
-                  OrderStatus, 
-                  IdAddress, 
-                  IdProduct, 
-                  CreatedDate, 
-                  UpdatedDate 
-                FROM  Orders ";
-            var result = _db.Set<ResponseAddresses_GetAll>().FromSqlRaw(sql).ToList();
+           var sql = @"
+           SELECT IdAddress,
+                   AddressLine,
+                   City,
+                   Country,
+                   Code
+            FROM Addresses";
+            //var result = _db.Set<ResponseAddresses_GetAll>().FromSqlRaw(sql).ToList();
+            //return result;
+            var result = _db.Connection.Query<ResponseAddresses_GetAll>(sql).ToList();
             return result;
         }
         public ResponseAddresses_Get Get(int IdAddress)
         {
             var sql = @"
-             SELECT 
-                  IdOrder, 
-                  IdCustomer, 
-                  Quantity, 
-                  Price, 
-                  OrderStatus, 
-                  IdAddress, 
-                  IdProduct, 
-                  CreatedDate, 
-                  UpdatedDate 
-                FROM  Orders where IdAddress= @prmIdAddress";
-            var result = _db.Set<ResponseAddresses_Get>().FromSqlRaw(sql, new { prmIdAddress = IdAddress }).FirstOrDefault();
+              --DECLARE @prmIdAddress int=1
+                SELECT IdAddress,
+                       AddressLine,
+                       City,
+                       Country,
+                       Code
+                FROM Addresses
+                WHERE IdAddress=@prmIdAddress";
+            var result = _db.Connection.Query<ResponseAddresses_Get>(sql, new { prmIdAddress = IdAddress }).FirstOrDefault();
             return result;
         }
     }

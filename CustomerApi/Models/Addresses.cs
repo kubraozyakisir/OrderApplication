@@ -4,7 +4,6 @@ namespace CustomerApi.Models
 {
     public class Addresses
     {
-        [Key]
         public int IdAddress { get; set; }
         [MaxLength(100)]
         public string AddressLine { get; set; }

@@ -13,9 +13,9 @@ namespace CustomerApi.Controllers
          private readonly IAddressBusiness _business;
        
          public AddressController(IAddressBusiness business)
-            {
-                _business = business;
-            }
+         {
+             _business = business;
+         }
        
          [HttpGet]
          [Route("[action]/{IdAddress}")]

@@ -4,7 +4,7 @@ using OrderApi.Models.SubModel;
 
 namespace OrderApi.Business.MapperProfile
 {
-    public class OrderApiProfile:Profile
+    public  class OrderApiProfile:Profile
     {
         public OrderApiProfile()
         {

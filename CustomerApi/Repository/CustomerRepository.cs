@@ -16,34 +16,30 @@ namespace CustomerApi.Repository
         public List<ResponseCustomers_GetAll> GetAll()
         {
             var sql = @"
-             SELECT 
-                  IdOrder, 
-                  IdCustomer, 
-                  Quantity, 
-                  Price, 
-                  OrderStatus, 
-                  IdAddress, 
-                  IdProduct, 
-                  CreatedDate, 
-                  UpdatedDate 
-                FROM  Orders ";
+             SELECT IdCustomer,
+                   CustomerName,
+                   Email,
+                   a.AddressLine,
+                   CreatedDate,
+                   UpdatedDate
+            FROM Customers c
+            LEFT JOIN Addresses a ON c.IdAddress=a.IdAddress";
             var result = _db.Set<ResponseCustomers_GetAll>().FromSqlRaw(sql).ToList();
             return result;
         }
         public ResponseCustomers_Get Get(int IdCustomer)
         {
             var sql = @"
-             SELECT 
-                  IdOrder, 
-                  IdCustomer, 
-                  Quantity, 
-                  Price, 
-                  OrderStatus, 
-                  IdAddress, 
-                  IdProduct, 
-                  CreatedDate, 
-                  UpdatedDate 
-                FROM  Orders where IdAddress= @prmIdAddress";
+            --DECLARE @prmIdCustomer int=3
+                SELECT IdCustomer,
+                       CustomerName,
+                       Email,
+                       a.AddressLine,
+                       CreatedDate,
+                       UpdatedDate
+                FROM Customers c
+                LEFT JOIN Addresses a ON c.IdAddress=a.IdAddress
+                WHERE IdCustomer=@prmIdCustomer";
             var result = _db.Set<ResponseCustomers_Get>().FromSqlRaw(sql, new { prmIdCustomer = IdCustomer }).FirstOrDefault();
             return result;
         }
