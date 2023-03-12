@@ -1,7 +1,9 @@
 ﻿using CustomerApi.Models;
 using CustomerApi.Models.SubModel;
 using CustomerApi.Repository.Interfaces;
+using Dapper;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace CustomerApi.Repository
 {
@@ -24,8 +26,9 @@ namespace CustomerApi.Repository
                    UpdatedDate
             FROM Customers c
             LEFT JOIN Addresses a ON c.IdAddress=a.IdAddress";
-            var result = _db.Set<ResponseCustomers_GetAll>().FromSqlRaw(sql).ToList();
+            var result = _db.Connection.Query<ResponseCustomers_GetAll>(sql).ToList();
             return result;
+
         }
         public ResponseCustomers_Get Get(int IdCustomer)
         {
@@ -40,7 +43,7 @@ namespace CustomerApi.Repository
                 FROM Customers c
                 LEFT JOIN Addresses a ON c.IdAddress=a.IdAddress
                 WHERE IdCustomer=@prmIdCustomer";
-            var result = _db.Set<ResponseCustomers_Get>().FromSqlRaw(sql, new { prmIdCustomer = IdCustomer }).FirstOrDefault();
+            var result = _db.Connection.Query<ResponseCustomers_Get>(sql, new { prmIdCustomer = IdCustomer }).FirstOrDefault();
             return result;
         }
 

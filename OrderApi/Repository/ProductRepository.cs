@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Dapper;
+using Microsoft.EntityFrameworkCore;
 using OrderApi.Models;
 using OrderApi.Models.SubModel;
 using OrderApi.Repository.Interfaces;
+using System.Net;
 
 namespace OrderApi.Repository
 {
@@ -27,8 +29,9 @@ namespace OrderApi.Repository
                   CreatedDate, 
                   UpdatedDate 
                 FROM  Orders ";
-            var result = _db.Set<ResponseProducts_GetAll>().FromSqlRaw(sql).ToList();
+            var result = _db.Connection.Query<ResponseProducts_GetAll>(sql).ToList();
             return result;
+
         }
         public ResponseProducts_Get Get(int IdProduct)
         {
@@ -44,8 +47,9 @@ namespace OrderApi.Repository
                   CreatedDate, 
                   UpdatedDate 
                 FROM  Orders where IdOrder= @prmIdOrder";
-            var result = _db.Set<ResponseProducts_Get>().FromSqlRaw(sql, new { prmIdOrder = IdProduct }).FirstOrDefault();
+            var result = _db.Connection.Query<ResponseProducts_Get>(sql, new { prmIdOrder = IdProduct }).FirstOrDefault();
             return result;
+
         }
     }
 }

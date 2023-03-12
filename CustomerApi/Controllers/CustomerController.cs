@@ -18,8 +18,8 @@ namespace CustomerApi.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/{IdOrder}")]
-        public ResponseCustomers_Get Get(int IdOrder) => _business.Get(IdOrder);
+        [Route("[action]/{IdCustomer}")]
+        public ResponseCustomers_Get Get(int IdCustomer) => _business.Get(IdCustomer);
 
         [HttpGet]
         [Route("[action]")]
