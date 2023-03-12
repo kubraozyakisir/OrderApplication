@@ -18,10 +18,11 @@
         public int IdOrder { get; set; }
         public int IdCustomer { get; set; }
         public string Quantity { get; set; }
+        public string ProductName { get; set; }
+        public string ImageUrl { get; set; }
         public decimal Price { get; set; }
         public string OrderStatus { get; set; }
         public int IdAddress { get; set; }
-        public int IdProduct { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }
@@ -31,10 +32,11 @@
         public int IdOrder { get; set; }
         public int IdCustomer { get; set; }
         public string Quantity { get; set; }
+        public string ProductName { get; set; }
+        public string ImageUrl { get; set; }
         public decimal Price { get; set; }
         public string OrderStatus { get; set; }
         public int IdAddress { get; set; }
-        public int IdProduct { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }

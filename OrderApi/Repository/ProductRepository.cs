@@ -18,17 +18,10 @@ namespace OrderApi.Repository
         public List<ResponseProducts_GetAll> GetAll()
         {
             var sql = @"
-             SELECT 
-                  IdOrder, 
-                  IdCustomer, 
-                  Quantity, 
-                  Price, 
-                  OrderStatus, 
-                  IdAddress, 
-                  IdProduct, 
-                  CreatedDate, 
-                  UpdatedDate 
-                FROM  Orders ";
+                SELECT IdProduct,
+                       ImageUrl,
+                       ProductName
+                  FROM Products";
             var result = _db.Connection.Query<ResponseProducts_GetAll>(sql).ToList();
             return result;
 
@@ -36,18 +29,14 @@ namespace OrderApi.Repository
         public ResponseProducts_Get Get(int IdProduct)
         {
             var sql = @"
-             SELECT 
-                  IdOrder, 
-                  IdCustomer, 
-                  Quantity, 
-                  Price, 
-                  OrderStatus, 
-                  IdAddress, 
-                  IdProduct, 
-                  CreatedDate, 
-                  UpdatedDate 
-                FROM  Orders where IdOrder= @prmIdOrder";
-            var result = _db.Connection.Query<ResponseProducts_Get>(sql, new { prmIdOrder = IdProduct }).FirstOrDefault();
+                    --DECLARE @prmIdProduct int=1
+                    
+                    SELECT IdProduct,
+                           ImageUrl,
+                           ProductName
+                    FROM Products
+                    WHERE IdProduct=@prmIdProduct";
+            var result = _db.Connection.Query<ResponseProducts_Get>(sql, new { prmIdProduct = IdProduct }).FirstOrDefault();
             return result;
 
         }
