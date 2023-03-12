@@ -18,11 +18,11 @@ namespace OrderApi.Business
             _mapper = mapper;
 
         }
-        public ResponseOrder_Get Get(int id)
+        public ResponseOrders_Get Get(int id)
         {
             return _repository.Get(id);
         }
-        public List<ResponseOrder_GetAll> GetAll()
+        public List<ResponseOrders_GetAll> GetAll()
         {
             return _repository.GetAll();
         }

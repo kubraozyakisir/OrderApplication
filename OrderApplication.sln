@@ -7,7 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerApi", "CustomerApi\CustomerApi.csproj", "{2D47B747-C929-44A3-B842-0BD1BB304CAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi", "OrderApi\OrderApi.csproj", "{C73207F4-AB93-4C97-85BA-9E21DF355ED1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApi", "OrderApi\OrderApi.csproj", "{C73207F4-AB93-4C97-85BA-9E21DF355ED1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{FEAC9ADA-6F8A-4060-8C2B-FC1D5EBEE16A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{F7285C7E-4CB4-444A-A119-A2147F6042C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,10 @@ Global
 		{C73207F4-AB93-4C97-85BA-9E21DF355ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C73207F4-AB93-4C97-85BA-9E21DF355ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C73207F4-AB93-4C97-85BA-9E21DF355ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7285C7E-4CB4-444A-A119-A2147F6042C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7285C7E-4CB4-444A-A119-A2147F6042C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7285C7E-4CB4-444A-A119-A2147F6042C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7285C7E-4CB4-444A-A119-A2147F6042C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2D47B747-C929-44A3-B842-0BD1BB304CAC} = {53BD41E4-8DE1-401D-A3B4-09552E06C832}
 		{C73207F4-AB93-4C97-85BA-9E21DF355ED1} = {53BD41E4-8DE1-401D-A3B4-09552E06C832}
+		{F7285C7E-4CB4-444A-A119-A2147F6042C7} = {FEAC9ADA-6F8A-4060-8C2B-FC1D5EBEE16A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1ED5C4DB-491E-4C85-8A5C-7A2036544621}

@@ -29,11 +29,11 @@ namespace CustomerApi.Controllers
         [Route("[action]")]
         public void Create(RequestCustomers request) => _business.Create(request);
 
-        [HttpPost]
+        [HttpPut]
         [Route("[action]")]
         public void Update(RequestCustomers request) => _business.Update(request);
 
-        [HttpPost]
+        [HttpDelete]
         [Route("[action]/{IdCustomer}")]
         public void Delete(int IdCustomer) => _business.Delete(IdCustomer);
 

@@ -13,7 +13,7 @@
         public DateTime UpdatedDate { get; set; }
     }
 
-    public class ResponseOrder_Get
+    public class ResponseOrders_Get
     {
         public int IdOrder { get; set; }
         public int IdCustomer { get; set; }
@@ -26,7 +26,7 @@
         public DateTime UpdatedDate { get; set; }
     }
 
-    public class ResponseOrder_GetAll
+    public class ResponseOrders_GetAll
     {
         public int IdOrder { get; set; }
         public int IdCustomer { get; set; }

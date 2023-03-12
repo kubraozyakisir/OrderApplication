@@ -6,8 +6,8 @@ namespace OrderApi.Business.Interfaces
     {
         void Create(RequestOrders request);
         void Delete(int IdOrder);
-        ResponseOrder_Get Get(int id);
-        List<ResponseOrder_GetAll> GetAll();
+        ResponseOrders_Get Get(int id);
+        List<ResponseOrders_GetAll> GetAll();
         void Update(RequestOrders request);
     }
 }

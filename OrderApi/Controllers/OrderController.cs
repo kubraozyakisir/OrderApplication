@@ -19,11 +19,11 @@ namespace OrderApi.Controllers
 
         [HttpGet]
         [Route("[action]/{IdOrder}")]
-        public ResponseOrder_Get Get(int IdOrder) => _business.Get(IdOrder);
+        public ResponseOrders_Get Get(int IdOrder) => _business.Get(IdOrder);
 
         [HttpGet]
         [Route("[action]")]
-        public List<ResponseOrder_GetAll> GetAll() => _business.GetAll();
+        public List<ResponseOrders_GetAll> GetAll() => _business.GetAll();
 
         [HttpPost]
         [Route("[action]")]
